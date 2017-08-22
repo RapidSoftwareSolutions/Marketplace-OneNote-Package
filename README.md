@@ -52,15 +52,6 @@ Creates a new page in the specified section of the user's default notebook. If t
 | content    | String     | Page content
 | sectionName| String     | The name of the section in the default notebook to create this new page in, if the section does not already exist.
 
-## OneNote.updatePage
-Modify page content.
-
-| Field      | Type       | Description
-|------------|------------|----------
-| accessToken| credentials| A valid OAuth token provided to the app based on the user credentials and the user having authorized access.
-| content    | String     | Page content
-| id         | String     | The ID of the page.
-
 ## OneNote.getAllPages
 Gets a collection of pages (metadata) across all notebooks in OneDrive that the user can access.
 

@@ -4,7 +4,6 @@ $routes = [
     'createPage',
     'createPageInSection',
     'createSectionDefaultPage',
-    'updatePage',
     'getAllPages',
     'getSectionPages',
     'getSinglePage',

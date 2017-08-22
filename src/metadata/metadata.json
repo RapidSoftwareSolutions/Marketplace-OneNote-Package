@@ -142,40 +142,6 @@
             ]
         },
         {
-            "name": "updatePage",
-            "description": "Modify page content.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
-                },
-                {
-                    "name": "content",
-                    "type": "String",
-                    "info": "Page content",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The ID of the page.",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
             "name": "getAllPages",
             "description": "Gets a collection of pages (metadata) across all notebooks in OneDrive that the user can access.",
             "args": [
