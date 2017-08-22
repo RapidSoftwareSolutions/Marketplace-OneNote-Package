@@ -4,7 +4,7 @@ $app->post('/api/OneNote/getAllNotebooks', function ($request, $response) {
 
     $settings = $this->settings;
     $checkRequest = $this->validation;
-    $validateRes = $checkRequest->validate($request, ['accessToken','id']);
+    $validateRes = $checkRequest->validate($request, ['accessToken']);
 
     if(!empty($validateRes) && isset($validateRes['callback']) && $validateRes['callback']=='error') {
         return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($validateRes);
@@ -12,7 +12,7 @@ $app->post('/api/OneNote/getAllNotebooks', function ($request, $response) {
         $post_data = $validateRes;
     }
 
-    $requiredParams = ['accessToken'=>'accessToken','id'=>'id'];
+    $requiredParams = ['accessToken'=>'accessToken'];
     $optionalParams = ['orderBy'=>'order_by','select'=>'select','expand'=>'expand','top'=>'top','skip'=>'skip','search'=>'search','count'=>'count'];
     $bodyParams = [
        'query' => ['filter','orderby','select','expand','top','skip','count']
