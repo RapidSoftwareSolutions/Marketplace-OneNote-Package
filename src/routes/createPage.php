@@ -23,7 +23,7 @@ $app->post('/api/OneNote/createPage', function ($request, $response) {
     $client = $this->httpClient;
     $query_str = "https://www.onenote.com/api/v1.0/me/notes/pages";
 
-    $requestParams = \Models\Params::createRequestBody($data, $bodyParams);
+    $requestParams['body'] = $data['content'];
     $requestParams['headers'] = ["Authorization"=>"Bearer {$data['accessToken']}", "Content-Type"=>"application/xhtml+xml"];
 
     try {

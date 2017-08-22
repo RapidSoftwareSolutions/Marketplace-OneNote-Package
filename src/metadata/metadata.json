@@ -432,7 +432,7 @@
                 {
                     "name": "id",
                     "type": "String",
-                    "info": "Section ID.",
+                    "info": "Page ID.",
                     "required": true
                 },
                 {
@@ -788,7 +788,7 @@
             ]
         },
         {
-            "name": "getSingleSection",
+            "name": "getGroupSections",
             "description": "Gets a specific section inside a OneNote notebook that is stored in Microsoft OneDrive. This can be a section in a notebook that is either owned by or shared with the user.",
             "args": [
                 {
@@ -800,7 +800,7 @@
                 {
                     "name": "id",
                     "type": "String",
-                    "info": "Section id.",
+                    "info": "Group id.",
                     "required": true
                 },
                 {

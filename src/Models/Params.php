@@ -39,11 +39,11 @@ class Params
             foreach ($value as $param){
                 if(array_key_exists($param, $data))
                 {
-                    $requestBody[$key][$param] = $data[$param];
+                    if ($key == "body"){$requestBody[$key] = $data[$param];}
+                    else {$requestBody[$key][$param] = $data[$param];}
                 }
             }
         }
-
         return $requestBody;
     }
 }

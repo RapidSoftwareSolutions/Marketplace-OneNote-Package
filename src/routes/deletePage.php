@@ -14,8 +14,7 @@ $app->post('/api/OneNote/deletePage', function ($request, $response) {
 
     $requiredParams = ['accessToken'=>'accessToken','id'=>'id'];
     $optionalParams = [];
-    $bodyParams = [
-    ];
+    $bodyParams = [];
 
     $data = \Models\Params::createParams($requiredParams, $optionalParams, $post_data['args']);
 
@@ -33,7 +32,7 @@ $app->post('/api/OneNote/deletePage', function ($request, $response) {
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = is_array($responseBody) ? $responseBody : json_decode($responseBody);
             if(empty($result['contextWrites']['to'])) {
-                $result['contextWrites']['to']['status_msg'] = "Api return no results";
+                $result['contextWrites']['to']['status_msg'] = "Page successfully deleted!";
             }
         } else {
             $result['callback'] = 'error';
