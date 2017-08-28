@@ -1,1361 +1,1289 @@
 {
-    "package": "OneNote",
-    "tagline": "OneNote API",
-    "description": "OneNote is a popular note-taking tool that's available online and on many mobile and tablet platforms. By integrating your apps with OneNote, it's easier than ever to create empowering apps on your favorite platforms and reach millions of users worldwide.",
-    "image": "https:\/\/logo.clearbit.com\/onenote.com",
-    "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-OneNote-Package",
-    "keywords": [
+    "package":"OneNote",
+    "tagline":"OneNote API",
+    "description":"OneNote is a popular note-taking tool that's available online and on many mobile and tablet platforms. By integrating your apps with OneNote, it's easier than ever to create empowering apps on your favorite platforms and reach millions of users worldwide.",
+    "image":"https:\/\/logo.clearbit.com\/onenote.com",
+    "repo":"https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-OneNote-Package",
+    "keywords":[
         "API",
         "onenote",
         "micro",
         "sheets"
     ],
-    "accounts": {
-        "domain": "http:\/\/www.onenote.com",
-        "credentials": [
+    "accounts":{
+        "domain":"http:\/\/www.onenote.com",
+        "credentials":[
             "clientId",
             "clientSecret",
             "accessToken"
         ]
     },
-    "events": [
+    "events":[
         {
-            "name": "webhookEvent",
-            "description": "Notifications are sent as POST requests that contain a JSON object.",
-            "payload": {
-                "value": [
+            "name":"webhookEvent",
+            "description":"Notifications are sent as POST requests that contain a JSON object.",
+            "payload":{
+                "value":[
                     {
-                        "subscriptionId": "client-id-of-your-registered-application",
-                        "userId": "id-of-the-user-who-owns-the-changed-resource"
+                        "subscriptionId":"client-id-of-your-registered-application",
+                        "userId":"id-of-the-user-who-owns-the-changed-resource"
                     }
                 ]
             },
-            "steps": [
+            "steps":[
                 "Navigate to Webhooks service",
                 "Set callback to __WEBHOOK_URL__"
             ],
-            "args": [
+            "args":[
                 {
-                    "name": "token",
-                    "type": "string",
-                    "info": "Token sent on each message",
-                    "required": false
+                    "name":"token",
+                    "type":"string",
+                    "info":"Token sent on each message",
+                    "required":false
                 }
             ]
         }
     ],
-    "blocks": [
+    "blocks":[
         {
-            "name": "createPage",
-            "description": "Creates a new page in the user's default section and notebook.",
-            "args": [
+            "name":"createPage",
+            "description":"Creates a new page in the user's default section and notebook.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
+                    "required":true
                 },
                 {
-                    "name": "content",
-                    "type": "String",
-                    "info": "Page content",
-                    "required": true
+                    "name":"content",
+                    "type":"String",
+                    "info":"Page content",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "createPageInSection",
-            "description": "Creates a new page in the specified section.",
-            "args": [
+            "name":"createPageInSection",
+            "description":"Creates a new page in the specified section.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
+                    "required":true
                 },
                 {
-                    "name": "content",
-                    "type": "String",
-                    "info": "Page content",
-                    "required": true
+                    "name":"content",
+                    "type":"String",
+                    "info":"Page content",
+                    "required":true
                 },
                 {
-                    "name": "sectionId",
-                    "type": "String",
-                    "info": "The id of section where the page is to be created.",
-                    "required": true
+                    "name":"sectionId",
+                    "type":"String",
+                    "info":"The id of section where the page is to be created.",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "createSectionDefaultPage",
-            "description": "Creates a new page in the specified section of the user's default notebook. If the section doesn't exist (or was renamed), the API will create the section.",
-            "args": [
+            "name":"createSectionDefaultPage",
+            "description":"Creates a new page in the specified section of the user's default notebook. If the section doesn't exist (or was renamed), the API will create the section.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
+                    "required":true
                 },
                 {
-                    "name": "content",
-                    "type": "String",
-                    "info": "Page content",
-                    "required": true
+                    "name":"content",
+                    "type":"String",
+                    "info":"Page content",
+                    "required":true
                 },
                 {
-                    "name": "sectionName",
-                    "type": "String",
-                    "info": "The name of the section in the default notebook to create this new page in, if the section does not already exist.",
-                    "required": true
+                    "name":"sectionName",
+                    "type":"String",
+                    "info":"The name of the section in the default notebook to create this new page in, if the section does not already exist.",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getAllPages",
-            "description": "Gets a collection of pages (metadata) across all notebooks in OneDrive that the user can access.",
-            "args": [
+            "name":"getAllPages",
+            "description":"Gets a collection of pages (metadata) across all notebooks in OneDrive that the user can access.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getSectionPages",
-            "description": "Gets a collection of pages (metadata) under the specified section.",
-            "args": [
+            "name":"getSectionPages",
+            "description":"Gets a collection of pages (metadata) under the specified section.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"A valid OAuth token provided to the app based on the user credentials and the user having authorized access.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Section ID.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Section ID.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
-                        "true",
-                        "false"
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
                     ],
-                    "info": "Boolean. Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
                 },
                 {
-                    "name": "pageLevel",
-                    "type": "Select",
-                    "options": [
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Boolean. Returns the level and order properties of the pages.",
-                    "required": false
+                    "info":"Boolean. Specifies to include the count of the returned collection.",
+                    "required":false
+                },
+                {
+                    "name":"pageLevel",
+                    "type":"Select",
+                    "options":[
+                        "true",
+                        "false"
+                    ],
+                    "info":"Boolean. Returns the level and order properties of the pages.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getSinglePage",
-            "description": "Gets a collection of pages (metadata) under the specified section.",
-            "args": [
+            "name":"getSinglePage",
+            "description":"Gets a collection of pages (metadata) under the specified section.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Section ID.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Section ID.",
+                    "required":true
                 },
                 {
                     "name": "select",
-                    "type": "List",
+                    "type": "String",
                     "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
+                    "required": false
                 },
                 {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
                 },
                 {
-                    "name": "pageLevel",
-                    "type": "Select",
-                    "options": [
+                    "name":"pageLevel",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Boolean. Returns the level and order properties of the pages.",
-                    "required": false
+                    "info":"Boolean. Returns the level and order properties of the pages.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getPageContent",
-            "description": "Gets a collection of pages (metadata) under the specified section.",
-            "args": [
+            "name":"getPageContent",
+            "description":"Gets a collection of pages (metadata) under the specified section.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Page ID.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Page ID.",
+                    "required":true
                 },
                 {
-                    "name": "includeIDs",
-                    "type": "Select",
-                    "options": [
+                    "name":"includeIDs",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Boolean. 'true' to include auto-generated element IDs.",
-                    "required": false
+                    "info":"Boolean. 'true' to include auto-generated element IDs.",
+                    "required":false
                 },
                 {
-                    "name": "preAuthenticated",
-                    "type": "Select",
-                    "options": [
+                    "name":"preAuthenticated",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Boolean. 'true' to return URLs that temporarily enable public access to the image resources on the page.'true' to include auto-generated element IDs.",
-                    "required": false
+                    "info":"Boolean. 'true' to return URLs that temporarily enable public access to the image resources on the page.'true' to include auto-generated element IDs.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getPagePreview",
-            "description": "Gets preview content for a specific page.",
-            "args": [
+            "name":"getPagePreview",
+            "description":"Gets preview content for a specific page.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Section ID.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Section ID.",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "deletePage",
-            "description": "You can't recover deleted data, so be careful when using this method. Deleting pages using the API deletes them permanently. They are not added to the OneNote Recycle Bin.",
-            "args": [
+            "name":"deletePage",
+            "description":"You can't recover deleted data, so be careful when using this method. Deleting pages using the API deletes them permanently. They are not added to the OneNote Recycle Bin.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Section ID.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Section ID.",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getAllSections",
-            "description": "Gets all sections to which a user has access in all OneNote notebooks that are stored in Microsoft OneDrive. This includes sections in notebooks that are both owned by and shared with the user. You can also retrieve all sections to which the user has access inside a specific notebook or section group.",
-            "args": [
+            "name":"getAllSections",
+            "description":"Gets all sections to which a user has access in all OneNote notebooks that are stored in Microsoft OneDrive. This includes sections in notebooks that are both owned by and shared with the user. You can also retrieve all sections to which the user has access inside a specific notebook or section group.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getNotebookSections",
-            "description": "Gets a collection of sections from the specified notebook.",
-            "args": [
+            "name":"getNotebookSections",
+            "description":"Gets a collection of sections from the specified notebook.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Notebook id.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Notebook id.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getGroupSections",
-            "description": "Gets a collection of sections from the specified section group.",
-            "args": [
+            "name":"getGroupSections",
+            "description":"Gets a collection of sections from the specified section group.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the section group that contains the section.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the section group that contains the section.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getGroupSections",
-            "description": "Gets a specific section inside a OneNote notebook that is stored in Microsoft OneDrive. This can be a section in a notebook that is either owned by or shared with the user.",
-            "args": [
+            "name":"getGroupSections",
+            "description":"Gets a specific section inside a OneNote notebook that is stored in Microsoft OneDrive. This can be a section in a notebook that is either owned by or shared with the user.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "Group id.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"Group id.",
+                    "required":true
                 },
                 {
                     "name": "select",
-                    "type": "List",
+                    "type": "String",
                     "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "createSection",
-            "description": "Creates a new section in the specified notebook on Microsoft OneDrive.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the notebook where you want to create the section.",
-                    "required": true
-                },
-                {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section name",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "createGroupSection",
-            "description": "Creates a new section in the specified section group on Microsoft OneDrive.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the section group where you want to create the section.",
-                    "required": true
-                },
-                {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section name",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "renameSection",
-            "description": "Renames the specified section.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the section to update.",
-                    "required": true
-                },
-                {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section name",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "getSectionGroups",
-            "description": "Gets all section groups to which a user has access in all OneNote notebooks that are stored in Microsoft OneDrive. This includes section groups in notebooks that are both owned by and shared with the user. You can also retrieve all section groups to which a user has access inside a specific notebook or section group.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
                     "required": false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"createSection",
+            "description":"Creates a new section in the specified notebook on Microsoft OneDrive.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the notebook where you want to create the section.",
+                    "required":true
+                },
+                {
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section name",
+                    "required":true
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"createGroupSection",
+            "description":"Creates a new section in the specified section group on Microsoft OneDrive.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the section group where you want to create the section.",
+                    "required":true
+                },
+                {
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section name",
+                    "required":true
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"renameSection",
+            "description":"Renames the specified section.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the section to update.",
+                    "required":true
+                },
+                {
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section name",
+                    "required":true
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"getSectionGroups",
+            "description":"Gets all section groups to which a user has access in all OneNote notebooks that are stored in Microsoft OneDrive. This includes section groups in notebooks that are both owned by and shared with the user. You can also retrieve all section groups to which a user has access inside a specific notebook or section group.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
+                },
+                {
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getGroupSectionCollection",
-            "description": "Gets a collection of section groups inside a specific section group.",
-            "args": [
+            "name":"getGroupSectionCollection",
+            "description":"Gets a collection of section groups inside a specific section group.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the parent section group.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the parent section group.",
+                    "required":true
                 },
                 {
-                    "name": "filter",
-                    "type": "String",
-                    "info": "A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
-                    "required": false
+                    "name":"filter",
+                    "type":"String",
+                    "info":"A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.",
+                    "required":false
                 },
                 {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
-                    "required": false
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getSingleSectionGroup",
-            "description": "Gets a specific section group.",
-            "args": [
+            "name":"getSingleSectionGroup",
+            "description":"Gets a specific section group.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the parent section group.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the parent section group.",
+                    "required":true
                 },
                 {
                     "name": "select",
-                    "type": "List",
+                    "type": "String",
                     "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "createNotebookSectionGroup",
-            "description": "Creates a new section group in the specified notebook.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the notebook where you want to create the section group.",
-                    "required": true
-                },
-                {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section group",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "createSectionGroup",
-            "description": "Creates a new section group in the specified section group.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the notebook where you want to create the section group.",
-                    "required": true
-                },
-                {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section group",
-                    "required": true
-                }
-            ],
-            "callbacks": [
-                {
-                    "name": "error",
-                    "info": "Error"
-                },
-                {
-                    "name": "success",
-                    "info": "Success"
-                }
-            ]
-        },
-        {
-            "name": "getAllNotebooks",
-            "description": "Gets all notebooks to which a user has access in Microsoft OneDrive. This includes notebooks that are both owned by and shared with the user.",
-            "args": [
-                {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
-                },
-                {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the notebook where you want to create the section group.",
-                    "required": true
-                },
-                {
-                    "name": "orderBy",
-                    "type": "String",
-                    "info": "Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
                     "required": false
+                },
+                {
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"createNotebookSectionGroup",
+            "description":"Creates a new section group in the specified notebook.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the notebook where you want to create the section group.",
+                    "required":true
+                },
+                {
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section group",
+                    "required":true
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"createSectionGroup",
+            "description":"Creates a new section group in the specified section group.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the notebook where you want to create the section group.",
+                    "required":true
+                },
+                {
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section group",
+                    "required":true
+                }
+            ],
+            "callbacks":[
+                {
+                    "name":"error",
+                    "info":"Error"
+                },
+                {
+                    "name":"success",
+                    "info":"Success"
+                }
+            ]
+        },
+        {
+            "name":"getAllNotebooks",
+            "description":"Gets all notebooks to which a user has access in Microsoft OneDrive. This includes notebooks that are both owned by and shared with the user.",
+            "args":[
+                {
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
+                },
+                {
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the notebook where you want to create the section group.",
+                    "required":true
+                },
+                {
+                    "name":"orderBy",
+                    "type":"String",
+                    "info":"Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.",
+                    "required":false
                 },
                 {
                     "name": "select",
-                    "type": "List",
-                    "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
-                },
-                {
-                    "name": "top",
-                    "type": "Number",
-                    "info": "Specifies to return only the first n results. Default is 20, maximum is 100. ",
-                    "required": false
-                },
-                {
-                    "name": "skip",
-                    "type": "Number",
-                    "info": "Specifies to skip the first n results, typically used for paging. Example: 5.",
-                    "required": false
-                },
-                {
-                    "name": "search",
                     "type": "String",
-                    "info": "Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "info": "Expression specifying the properties to return",
                     "required": false
                 },
                 {
-                    "name": "count",
-                    "type": "Select",
-                    "options": [
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
+                },
+                {
+                    "name":"top",
+                    "type":"Number",
+                    "info":"Specifies to return only the first n results. Default is 20, maximum is 100. ",
+                    "required":false
+                },
+                {
+                    "name":"skip",
+                    "type":"Number",
+                    "info":"Specifies to skip the first n results, typically used for paging. Example: 5.",
+                    "required":false
+                },
+                {
+                    "name":"search",
+                    "type":"String",
+                    "info":"Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.",
+                    "required":false
+                },
+                {
+                    "name":"count",
+                    "type":"Select",
+                    "options":[
                         "true",
                         "false"
                     ],
-                    "info": "Specifies to include the count of the returned collection.",
-                    "required": false
+                    "info":"Specifies to include the count of the returned collection.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "getSingleNotebook",
-            "description": "Gets a specific notebook.",
-            "args": [
+            "name":"getSingleNotebook",
+            "description":"Gets a specific notebook.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "id",
-                    "type": "String",
-                    "info": "The id of the notebook where you want to create the section group.",
-                    "required": true
+                    "name":"id",
+                    "type":"String",
+                    "info":"The id of the notebook where you want to create the section group.",
+                    "required":true
                 },
                 {
                     "name": "select",
-                    "type": "List",
+                    "type": "String",
                     "info": "Expression specifying the properties to return",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
+                    "required": false
                 },
                 {
-                    "name": "expand",
-                    "type": "List",
-                    "info": "Expression specifying the navigation properties to return inline.",
-                    "required": false,
-                    "structure": {
-                        "name": "property",
-                        "type": "String",
-                        "info": "Single property."
-                    }
+                    "name":"expand",
+                    "type":"Select",
+                    "options":[
+                        "parentNotebook",
+                        "parentSection"
+                    ],
+                    "info":"Expression specifying the navigation properties to return inline.",
+                    "required":false
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         },
         {
-            "name": "createNotebook",
-            "description": "Creates a new notebook for the user in Microsoft OneDrive.",
-            "args": [
+            "name":"createNotebook",
+            "description":"Creates a new notebook for the user in Microsoft OneDrive.",
+            "args":[
                 {
-                    "name": "accessToken",
-                    "type": "credentials",
-                    "info": "The id of page.",
-                    "required": true
+                    "name":"accessToken",
+                    "type":"credentials",
+                    "info":"The id of page.",
+                    "required":true
                 },
                 {
-                    "name": "name",
-                    "type": "String",
-                    "info": "Section name",
-                    "required": true
+                    "name":"name",
+                    "type":"String",
+                    "info":"Section name",
+                    "required":true
                 }
             ],
-            "callbacks": [
+            "callbacks":[
                 {
-                    "name": "error",
-                    "info": "Error"
+                    "name":"error",
+                    "info":"Error"
                 },
                 {
-                    "name": "success",
-                    "info": "Success"
+                    "name":"success",
+                    "info":"Success"
                 }
             ]
         }

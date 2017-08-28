@@ -209,25 +209,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -309,25 +300,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -404,25 +386,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "pageLevel",
@@ -606,25 +579,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -705,25 +669,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -804,25 +759,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -890,25 +836,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         }
       ],
       "url": "https://www.onenote.com/api/v1.0/me/notes/sections/{$data['id']}",
@@ -1093,25 +1030,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -1192,25 +1120,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -1278,25 +1197,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         }
       ],
       "url": "https://www.onenote.com/api/v1.0/me/notes/sectiongroups/id/{$data['id']}",
@@ -1430,25 +1340,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "top",
@@ -1516,25 +1417,16 @@
         },
         {
           "name": "select",
-          "type": "List",
+          "type": "String",
           "info": "Expression specifying the properties to return",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         },
         {
           "name": "expand",
-          "type": "List",
+          "type": "Select",
+          "options": ["parentNotebook","parentSection"],
           "info": "Expression specifying the navigation properties to return inline.",
-          "required": false,
-          "structure": {
-            "name": "property",
-            "type": "String",
-            "info": "Single property."
-          }
+          "required": false
         }
       ],
       "url": "https://www.onenote.com/api/v1.0/me/notes/notebooks/{$data['id']}",
