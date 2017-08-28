@@ -1169,8 +1169,8 @@
                     "name":"expand",
                     "type":"Select",
                     "options":[
-                        "parentNotebook",
-                        "parentSection"
+                        "sections",
+                        "sectionGroups"
                     ],
                     "info":"Expression specifying the navigation properties to return inline.",
                     "required":false
@@ -1241,8 +1241,8 @@
                     "name":"expand",
                     "type":"Select",
                     "options":[
-                        "parentNotebook",
-                        "parentSection"
+                        "sections",
+                        "sectionGroups"
                     ],
                     "info":"Expression specifying the navigation properties to return inline.",
                     "required":false

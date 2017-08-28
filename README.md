@@ -273,7 +273,7 @@ Gets all notebooks to which a user has access in Microsoft OneDrive. This includ
 | id         | String     | The id of the notebook where you want to create the section group.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
 | select     | String       | Expression specifying the properties to return
-| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```sections``` or ```sectionGroups```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -287,7 +287,7 @@ Gets a specific notebook.
 | accessToken| credentials| The id of page.
 | id         | String     | The id of the notebook where you want to create the section group.
 | select     | String       | Expression specifying the properties to return
-| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```sections``` or ```sectionGroups```
 
 ## OneNote.createNotebook
 Creates a new notebook for the user in Microsoft OneDrive.
