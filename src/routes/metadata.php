@@ -1,7 +1,9 @@
 <?php
 
 $app->get('/api/OneNote', function ($request, $response, $args) {
-    $newStream = new \GuzzleHttp\Psr7\LazyOpenStream(__DIR__ . '/../../src/metadata/metadata.json', 'r');
-    $newResponse = $response->withHeader('Content-type', 'application/json')->withStatus(200)->withBody($newStream);
-    return $newResponse;
+    $schema = file_get_contents(__DIR__ . '/../../src/metadata/schema.json');
+    $metadata = new Models\Metadata($schema);
+    $result = $metadata->create();
+    return $response->withHeader('Content-type', 'application/json')->withStatus(200)->withJson($result);
+
 });

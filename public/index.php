@@ -23,6 +23,7 @@ require __DIR__ . '/../src/Models/paginationClass.php';
 require __DIR__ . '/../src/Models/normalizeJson.php';
 require __DIR__ . '/../src/Models/checkRequest.php';
 require __DIR__ . '/../src/Models/Params.php';
+require __DIR__ . '/../src/Models/Metadata.php';
 
 // Set up dependencies
 require __DIR__ . '/../src/dependencies.php';
