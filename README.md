@@ -60,8 +60,8 @@ Gets a collection of pages (metadata) across all notebooks in OneDrive that the 
 | accessToken| credentials| A valid OAuth token provided to the app based on the user credentials and the user having authorized access.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -76,8 +76,8 @@ Gets a collection of pages (metadata) under the specified section.
 | id         | String     | Section ID.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -91,8 +91,8 @@ Gets a collection of pages (metadata) under the specified section.
 |------------|------------|----------
 | accessToken| credentials| The id of page.
 | id         | String     | Section ID.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | pageLevel  | Select     | Boolean. Returns the level and order properties of the pages.
 
 ## OneNote.getPageContent
@@ -129,8 +129,8 @@ Gets all sections to which a user has access in all OneNote notebooks that are s
 | accessToken| credentials| The id of page.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -145,8 +145,8 @@ Gets a collection of sections from the specified notebook.
 | id         | String     | Notebook id.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -161,8 +161,8 @@ Gets a collection of sections from the specified section group.
 | id         | String     | The id of the section group that contains the section.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -175,8 +175,8 @@ Gets a specific section inside a OneNote notebook that is stored in Microsoft On
 |------------|------------|----------
 | accessToken| credentials| The id of page.
 | id         | String     | Section id.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 
 ## OneNote.createSection
 Creates a new section in the specified notebook on Microsoft OneDrive.
@@ -213,8 +213,8 @@ Gets all section groups to which a user has access in all OneNote notebooks that
 | accessToken| credentials| The id of page.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -229,8 +229,8 @@ Gets a collection of section groups inside a specific section group.
 | id         | String     | The id of the parent section group.
 | filter     | String     | A Boolean expression for whether to include a particular entry. Example: title eq 'Trip Planning'.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -243,8 +243,8 @@ Gets a specific section group.
 |------------|------------|----------
 | accessToken| credentials| The id of page.
 | id         | String     | The id of the parent section group.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 
 ## OneNote.createNotebookSectionGroup
 Creates a new section group in the specified notebook.
@@ -272,8 +272,8 @@ Gets all notebooks to which a user has access in Microsoft OneDrive. This includ
 | accessToken| credentials| The id of page.
 | id         | String     | The id of the notebook where you want to create the section group.
 | orderBy    | String     | Expression specifying order. Default is lastModifiedTime desc. Example: createdTime.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 | top        | Number     | Specifies to return only the first n results. Default is 20, maximum is 100. 
 | skip       | Number     | Specifies to skip the first n results, typically used for paging. Example: 5.
 | search     | String     | Specifies the term or phrase to search for in the page title, page body, image alt text, and image OCR text.
@@ -286,8 +286,8 @@ Gets a specific notebook.
 |------------|------------|----------
 | accessToken| credentials| The id of page.
 | id         | String     | The id of the notebook where you want to create the section group.
-| select     | List       | Expression specifying the properties to return
-| expand     | List       | Expression specifying the navigation properties to return inline.
+| select     | String       | Expression specifying the properties to return
+| expand     | Select       | Expression specifying the navigation properties to return inline. Must be: ```parentNotebook``` or ```parentSection```
 
 ## OneNote.createNotebook
 Creates a new notebook for the user in Microsoft OneDrive.
